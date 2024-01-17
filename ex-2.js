@@ -1,7 +1,18 @@
 // Exercise 2: Single Number
 
 const singleNumber = function (nums) {
-  // Start coding here
+  // Start coding heres
+  const numCount = {};
+  
+  for (const num of nums) {
+    numCount[num] = (numCount[num] || 0) + 1;
+  }
+
+  for (const num in numCount) {
+    if (numCount[num] === 1) {
+      return num; 
+    }
+  }
 };
 
 const result1 = singleNumber([2, 2, 1]);
